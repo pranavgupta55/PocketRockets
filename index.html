@@ -819,10 +819,11 @@ function buildGaugeZones(){
 
   const blt=document.getElementById('boundLabelsTop');
   blt.innerHTML='';
+  const rLabels=[0, R_BOUNDS[0], R_BOUNDS[1], R_BOUNDS[2], '∞'];
   [0,1,2,3,4].forEach(i=>{
     const sp=document.createElement('span');
     sp.style.left=(b[i]*100)+'%';
-    sp.textContent=(b[i]*100).toFixed(1).replace(/\.0$/,'')+'%';
+    sp.textContent=typeof rLabels[i]==='number' ? rLabels[i].toFixed(1) : rLabels[i];
     blt.appendChild(sp);
   });
 
