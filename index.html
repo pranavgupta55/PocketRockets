@@ -822,8 +822,7 @@ function buildGaugeZones(){
   [0,1,2,3,4].forEach(i=>{
     const sp=document.createElement('span');
     sp.style.left=(b[i]*100)+'%';
-    const labels=['Fold', 'Call', 'Bet', 'Big', 'Certain'];
-    sp.textContent=labels[i];
+    sp.textContent=(b[i]*100).toFixed(1).replace(/\.0$/,'')+'%';
     blt.appendChild(sp);
   });
 
