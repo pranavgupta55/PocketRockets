@@ -1,3 +1,6 @@
+In 23 hands too, wtf
+<img width="1474" height="859" alt="Screenshot 2026-07-13 at 2 48 29 AM" src="https://github.com/user-attachments/assets/f595316c-1e9d-4337-bacd-46a4655b8fe0" />
+
 # Pocket Rockets
 
 A browser-based poker instinct trainer for beginners. Each hand deals you a real situation — your hole cards, a random street (preflop / flop / turn / river), a table of 2–9 players — and asks one question: **how strong is this hand, really?** You answer with one of four moves (Fold, Check/Call, Bet, Bet Big), and the game grades you against the hand's *measured* win probability.
