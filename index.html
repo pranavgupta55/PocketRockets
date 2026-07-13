@@ -259,6 +259,8 @@
   .zone .zn{font-size:9.5px; font-weight:600; color:var(--white-hint); opacity:.85; white-space:nowrap; font-family:'IBM Plex Mono',monospace;}
   .zone.z-fold{background:var(--hot-deep);} .zone.z-call{background:#5c5646;}
   .zone.z-bet{background:var(--cool-deep);} .zone.z-big{background:var(--accent-deep);}
+  .bound-labels-top{position:relative; height:16px; margin-bottom:4px;}
+  .bound-labels-top span{position:absolute; bottom:0; transform:translateX(-50%); font-family:'IBM Plex Mono',monospace; font-size:9px; color:var(--ink-dim); font-weight:500;}
   .bound-labels{position:relative; height:13px; margin-top:1px;}
   .bound-labels span{position:absolute; transform:translateX(-50%); font-family:'IBM Plex Mono',monospace; font-size:9px; color:var(--ink-dim);}
   .needle{position:absolute; top:-3px; bottom:-3px; width:3px; background:var(--white-hint); border-radius:2px; z-index:3; left:0; transition:left 1s cubic-bezier(.2,.8,.2,1); box-shadow:0 0 8px var(--accent);}
@@ -424,6 +426,7 @@
             <span id="gaugeTitle">Your win chance</span>
             <button class="peek" id="peekBtn">👁 peek</button>
           </div>
+          <div class="bound-labels-top" id="boundLabelsTop"></div>
           <div class="gauge veiled" id="gauge">
             <div class="computing" id="computing">dealing the math…</div>
           </div>
@@ -813,6 +816,16 @@ function buildGaugeZones(){
   }
   const nd=document.createElement('div'); nd.className='needle'; nd.id='needle'; nd.dataset.eq='';
   g.appendChild(nd);
+
+  const blt=document.getElementById('boundLabelsTop');
+  blt.innerHTML='';
+  [0,1,2,3,4].forEach(i=>{
+    const sp=document.createElement('span');
+    sp.style.left=(b[i]*100)+'%';
+    const labels=['Fold', 'Call', 'Bet', 'Big', 'Certain'];
+    sp.textContent=labels[i];
+    blt.appendChild(sp);
+  });
 
   const bl=document.getElementById('boundLabels');
   bl.innerHTML='';
