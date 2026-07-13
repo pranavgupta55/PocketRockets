@@ -614,7 +614,7 @@ function computeEquity(){
 }
 
 /* ================= GRADING ================= */
-const R_BOUNDS=[0.8, 1.1, 2.0];
+const R_BOUNDS=[0.9, 1.2, 2.0];
 function zoneOfEq(eq, fair){
   const r=eq/fair;
   if(r<R_BOUNDS[0]) return 0; if(r<R_BOUNDS[1]) return 1; if(r<R_BOUNDS[2]) return 2; return 3;
